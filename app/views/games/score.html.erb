@@ -1,0 +1,15 @@
+<h1>Result</h1>
+
+<% if @display_message ==1 %>
+ <p> <strong>Congratulations</strong> <%= params[:word_to_check]%> is a valid english word! </p>
+
+<% elsif @display_message ==2 %>
+<p> Sorry but <strong><%= params[:word_to_check]%> </strong> does not seem to be a valid english word... </p>
+<% else %>
+<p> Sorry but <strong><%= params[:word_to_check]%> </strong> can't be built out of
+  <% @display_message.each do |letter|  %>
+      <span> <%= letter %>, </span>
+  <% end %>
+</p>
+
+<% end %>
